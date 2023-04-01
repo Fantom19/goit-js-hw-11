@@ -2,7 +2,7 @@ import axios from 'axios';
 
 async function allPictures(query, page, per_page) {
   const params = new URLSearchParams({
-    key: '29055202-7a11a8de1831679c8600f5be9',
+    key: '29055202-7a11a8de1831679c8600f5be8',
     q: query,
     page: page,
     per_page: per_page,

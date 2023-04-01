@@ -34,7 +34,7 @@ function renderImages(images) {
         downloads,
       }) => {
         return `<a href = "${largeImageURL}" class="photo-card">
-        <img class="photo-image" src="${webformatURL}" alt="${tags}" loading="lazy" /></a>
+        <img class="photo-image" src="${webformatURL}" alt="${tags}" loading="lazy" />
         <div class="info">
           <p class="info-item">
             <b>Likes</b>
@@ -53,6 +53,7 @@ function renderImages(images) {
             <span>${downloads}</span>
           </p>
         </div>
+        </a>
       `;
       }
     )
@@ -70,7 +71,7 @@ const handleSubmit = async e => {
   const elements = form.elements;
   query = elements.searchQuery.value;
   const images = await allPictures(query, page, per_page);
- 
+
 
   if (images.hits.length === 0) {
     Notiflix.Notify.failure(
@@ -100,5 +101,5 @@ const handleClick = async e => {
   }
 };
 
-form.addEventListener('submit', e => handleSubmit(e));
+form.addEventListener('submit',  handleSubmit);
 button.addEventListener('click', handleClick);
